@@ -1,0 +1,10 @@
+<h1>Add new squad</h1>
+
+<%= form_tag :action => 'create' do %>
+  <p><label for = "squad_name">Squad Name</label>:
+
+    <%= text_field 'squads', 'squad_name' %></p>
+
+  <%= submit_tag "Create" %>
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>

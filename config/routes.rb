@@ -1,5 +1,22 @@
 TestApp::Application.routes.draw do
-  root :to => 'application#hello'
+  #root :to => 'application#hello'
+
+  get 'employee/list'
+  get 'employee/new'
+  post 'employee/create'
+  put 'employee/update'
+  get 'employee/list'
+  get 'employee/show'
+  get 'employee/edit'
+  get 'employee/delete'
+  get 'employee/update'
+  get 'employee/show_squads'
+
+  get 'squad/new'
+  get 'squad/list'
+  post 'squad/create'
+  put 'squad/update'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,20 @@
+<h1>Add new employee</h1>
+
+<%= form_tag :action => 'create' do %>
+  <p><label for = "employee_id">Employee ID</label>:
+
+    <%= text_field 'employees', 'employee_id' %></p>
+  <p><label for = "employee_name">Name</label>:
+
+    <%= text_field 'employees', 'employee_name' %></p>
+  <p><label for = "employee_email">E-mail</label><br/>
+
+    <%= text_field 'employees', 'employee_email' %></p>
+  <p><label for = "employee_squad">Squad</label>:
+
+    <%= collection_select(:employees, :squad_name, @squads, :id, :squad_name, prompt: true) %></p>
+
+  <%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>
