@@ -1,4 +1,4 @@
 class Personal < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :dob, :gender, :nativity, :phone_number, :work_number, :id
+  attr_accessible :first_name, :last_name, :dob, :gender, :nativity, :phone_number, :work_number, :id, :employee_id
   belongs_to :employee
 end

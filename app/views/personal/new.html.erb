@@ -1,6 +1,6 @@
 <h1>Add Personal Details</h1>
 
-<%= form_tag :action => 'create' do%>
+<%= form_tag :action => 'create', :employee_id => @employee_id do%>
   <p><label for = "first_name">First Name</label>:
 
     <%= text_field 'personals', 'first_name' %></p>
@@ -26,4 +26,5 @@
   <%= submit_tag "Create" %>
 
 <% end -%>
-<%= link_to 'Back', {:action => 'show'} %>
+<%= link_to 'Back', :back%>
+<%# <%= link_to 'Back' %> %>

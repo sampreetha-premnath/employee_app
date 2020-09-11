@@ -6,6 +6,7 @@ class EmployeeController < ApplicationController
 
   def show
     @employee = Employee.where(employee_id: params[:id])[0]
+    @personal = Personal.where(employee_id: @employee.id)[0]
   end
 
   def new
@@ -14,7 +15,6 @@ class EmployeeController < ApplicationController
   end
 
   def create
-    byebug
     @employee = Employee.new(params[:employees])
     #    @employee.personal_id = Personal.id
     if @employee.save

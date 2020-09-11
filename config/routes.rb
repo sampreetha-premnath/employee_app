@@ -12,9 +12,9 @@ TestApp::Application.routes.draw do
   #  get 'employee/personal'
   #  get 'employee/education'
   #  get 'employee/address'
-  get 'personal/new'
-  get 'personal/show/:id' => 'personal#show', as: 'personal_show'
-  post 'personal/create'
+  get 'personal/:employee_id/new' => 'personal#new', as: 'personal_new'
+  get 'personal/:employee_id/show/:id' => 'personal#show', as: 'personal_show'
+  post 'personal/create' => 'personal#create', as: 'personal_create'
 
   get 'squad/new'
   get 'squad/list'
