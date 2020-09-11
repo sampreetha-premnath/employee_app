@@ -1,10 +1,11 @@
 class EmployeeController < ApplicationController
+
   def list
     @employees = Employee.all
   end
 
   def show
-    @employee = Employee.find(params[:id])
+    @employee = Employee.where(employee_id: params[:id])[0]
   end
 
   def new
@@ -12,12 +13,10 @@ class EmployeeController < ApplicationController
     @squads = Squad.all
   end
 
-  def employee_params
-    #    params[:employees].permit(:employee_id, :employee_name, :employee_email)
-  end
-
   def create
-    @employee = Employee.new(employee_params)
+    byebug
+    @employee = Employee.new(params[:employees])
+    #    @employee.personal_id = Personal.id
     if @employee.save
       redirect_to :action => 'list'
     else
@@ -26,13 +25,10 @@ class EmployeeController < ApplicationController
     end
   end
 
+=begin
   def edit
     @employee = Employee.find(params[:id])
     @squads = Squad.all
-  end
-
-  def employee_param
-    #    params.require(:employee).permit(:title, :price, :subject_id, :description)
   end
 
   def update
@@ -55,4 +51,5 @@ class EmployeeController < ApplicationController
   def show_squads
     @squad = Squad.find(params[:id])
   end
+=end
 end

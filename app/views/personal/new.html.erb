@@ -1,0 +1,29 @@
+<h1>Add Personal Details</h1>
+
+<%= form_tag :action => 'create' do%>
+  <p><label for = "first_name">First Name</label>:
+
+    <%= text_field 'personals', 'first_name' %></p>
+  <p><label for = "last_name">Last Name</label>:
+
+    <%= text_field 'personals', 'last_name' %></p>
+  <p><label for = "dob">Date of Birth</label>:
+
+    <%= date_select 'personals', 'dob', start_year: 1970, end_year: 2010%></p>
+  <p><label for = "gender">Gender</label>:
+
+    <%= select 'personals', 'gender', %w{Male Female Other}%></p>
+  <p><label for = "nativity">Nativity</label>:
+
+    <%= text_field 'personals', 'nativity'%></p>
+  <p><label for = "phone_number">Phone Number</label>:
+
+    <%= telephone_field 'personals', 'phone_number'%></p>
+  <p><label for = "work_number">Work Number</label>:
+
+    <%= telephone_field 'personals', 'work_number'%></p>
+
+  <%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'show'} %>

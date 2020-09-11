@@ -4,13 +4,17 @@ TestApp::Application.routes.draw do
   get 'employee/list'
   get 'employee/new'
   post 'employee/create'
-  put 'employee/update'
-  get 'employee/list'
+  put 'employee/update'#
   get 'employee/show'
-  get 'employee/edit'
-  get 'employee/delete'
-  get 'employee/update'
-  get 'employee/show_squads'
+  get 'employee/edit'#
+  get 'employee/delete'#
+  get 'employee/show_squads'#
+  #  get 'employee/personal'
+  #  get 'employee/education'
+  #  get 'employee/address'
+  get 'personal/new'
+  get 'personal/show/:id' => 'personal#show', as: 'personal_show'
+  post 'personal/create'
 
   get 'squad/new'
   get 'squad/list'

@@ -4,13 +4,16 @@ class SquadController < ApplicationController
   end
 
   def create
-    byebug
     @squad = Squad.new(params[:squads])
     if @squad.save
       redirect_to :action => 'list'
     else
       render :action => 'new'
     end
+  end
+
+  def list
+    @squads = Squad.all
   end
 
 end

@@ -1,0 +1,18 @@
+<h1><%= @personal.first_name %></h1>
+
+<p>
+
+  <strong>First Name :</strong> <%=  @personal.first_name %><br />
+  <strong>Last Name:</strong> <%=  @personal.last_name %><br />
+  <strong>Date of Birth: </strong> <%=  @personal.dob %><br />
+  <strong>Gender :</strong> <%=  @personal.gender %><br />
+  <strong>Nativity :</strong> <%=  @personal.nativity %><br />
+  <strong>Phone Number :</strong> <%=  @personal.phone_number %><br />
+  <strong>Work Number :</strong> <%=  @personal.work_number %><br />
+</p>
+
+<%= link_to 'Edit', {:action => 'new'} %>
+
+<!--
+<strong>Employee ID: </strong> $< @personal.id %><br />
+-->

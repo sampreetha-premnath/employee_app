@@ -5,7 +5,7 @@
 
   <ul id = "squads">
     <% @squads.each do |c| %>
-      <li><%= link_to c.id, {:action => 'show', :id => c.squad_name} -%></li>
+      <li> <%= c.squad_name %></li>
     <% end %>
   </ul>
 

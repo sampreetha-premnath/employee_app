@@ -1,0 +1,15 @@
+<h1><%= @employee.employee_name %></h1>
+
+<p>
+  <strong>Employee ID: </strong> $<%= @employee.employee_id %><br />
+  <strong>Name :</strong> <%=  @employee.employee_name %><br />
+  <strong>e-mail :</strong> <%=  @employee.employee_email %><br />
+  <strong>Squad :</strong> <%=  @employee.squad.squad_name %><br />
+</p>
+
+<hr />
+<%= link_to 'Personal Details', personal_show_path(@employee.personal_id) %>
+<%= link_to 'Education Details'%>
+<%= link_to 'Address Details' %>
+
+<%= link_to 'Back', {:action => 'list'} %>
