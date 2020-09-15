@@ -8,13 +8,14 @@
 </p>
 
 <hr />
+<!--
 <%# <%if (@employee.personal_id).nil?%> %>
   <%# <%= link_to 'Add PersonalDetails', personal_new_path(@employee.id)%> %>
 <%# <%else%> %>
  
-<%# <%end%> %>
- <%= link_to 'Personal Details', personal_show_path(:employee_id => @employee.id, :id => @personal.id ) %>
-<%= link_to 'Education Details'%>
+<%# <%end%> %> -->
+<%= link_to 'Personal Details', personal_show_path(:employee_id => @employee.id, :id => @personal.id ) %>
+<%= link_to 'Education Details', edu_show_path(:employee_id => @employee.id, :id => @education.id)%>
 <%= link_to 'Address Details' %>
 
 <%= link_to 'Back', {:action => 'list'} %>

@@ -9,12 +9,18 @@ TestApp::Application.routes.draw do
   get 'employee/edit'#
   get 'employee/delete'#
   get 'employee/show_squads'#
-  #  get 'employee/personal'
-  #  get 'employee/education'
-  #  get 'employee/address'
+
   get 'personal/:employee_id/new' => 'personal#new', as: 'personal_new'
   get 'personal/:employee_id/show/:id' => 'personal#show', as: 'personal_show'
   post 'personal/create' => 'personal#create', as: 'personal_create'
+  get 'personal/:employee_id/edit/:id' => 'personal#edit', as: 'personal_edit'
+  post 'personal/:employee_id/update/:id', to: 'personal#update'
+
+  get 'edu/:employee_id/new' => 'education#new', as: 'edu_new'
+  get 'edu/:employee_id/show/:id' => 'education#show', as: 'edu_show'
+  post 'edu/create' => 'education#create', as: 'edu_create'
+  get 'edu/:employee_id/edit/:id' => 'education#edit', as: 'edu_edit'
+  post 'edu/:employee_id/update/:id', to: 'education#update'
 
   get 'squad/new'
   get 'squad/list'

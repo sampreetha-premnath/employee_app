@@ -5,8 +5,10 @@ class EmployeeController < ApplicationController
   end
 
   def show
+    byebug
     @employee = Employee.where(employee_id: params[:id])[0]
     @personal = Personal.where(employee_id: @employee.id)[0]
+    @education = Education.where(employee_id: @employee.id)[0]
   end
 
   def new
@@ -16,7 +18,6 @@ class EmployeeController < ApplicationController
 
   def create
     @employee = Employee.new(params[:employees])
-    #    @employee.personal_id = Personal.id
     if @employee.save
       redirect_to :action => 'list'
     else

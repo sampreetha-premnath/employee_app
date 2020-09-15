@@ -1,0 +1,24 @@
+<h1> Edit Education Details</h1>
+
+<%= form_tag action: 'update', :employee_id => @employee_id do %>
+  <%= label_tag(:tenth_school, "10th Standard School :") %>
+  <%= text_field_tag(:tenth_school,@education.tenth_school) %><br/><br/>
+
+  <%= label_tag(:tenth_grade, "10th Standard Percentage :") %>
+  <%= text_field_tag(:tenth_grade,@education.tenth_grade) %><br/><br/>
+
+  <%= label_tag(:twelfth_school, "12th Standard School :") %>
+  <%= text_field_tag(:twelfth_school,@education.twelfth_school) %><br/><br/>
+
+  <%= label_tag(:twelfth_grade, "12th Standard Percentage :") %>
+  <%= text_field_tag(:twelfth_grade,@education.twelfth_grade) %><br/><br/>
+
+  <%= label_tag(:ug_university, "UG University :") %>
+  <%= text_field_tag(:ug_university,@education.ug_university) %><br/><br/>
+
+  <%= label_tag(:ug_grade, "UG CGPA :") %>
+  <%= text_field_tag(:ug_grade,@education.ug_grade) %><br/><br/>
+
+  <%= submit_tag "Update" %>
+
+<% end %>

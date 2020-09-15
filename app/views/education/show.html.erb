@@ -1,0 +1,13 @@
+<h1><%= @education.employee_id %></h1>
+
+<p>
+
+  <strong>10th Standard School : </strong> <%=  @education.tenth_school %><br />
+  <strong>10th Standard Percentage : </strong> <%=  @education.tenth_grade %><br />
+  <strong>12th Standard School :</strong> <%=  @education.twelfth_school %><br />
+  <strong>12th Standard Percentage : </strong> <%=  @education.twelfth_grade %><br />
+  <strong>UG University : </strong> <%=  @education.ug_university %><br />
+  <strong>UG CGPA : </strong> <%=  @education.ug_grade %><br />
+</p>
+
+<%= link_to 'Edit', edu_edit_path %>

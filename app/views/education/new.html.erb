@@ -1,0 +1,26 @@
+<h1>Add Education Details</h1>
+
+<%= form_tag :action => 'create', :employee_id => @employee_id do%>
+  <p><label for = "tenth_school">10th Standard School</label>:
+
+    <%= text_field 'educations', 'tenth_school' %></p>
+  <p><label for = "tenth_grade">10th Standard Percentage</label>:
+
+    <%= text_field 'educations', 'tenth_grade' %></p>
+  <p><label for = "twelfth_school">12th Standard School</label>:
+
+    <%= text_field 'educations', 'twelfth_school' %></p>
+  <p><label for = "twelfth_grade">12th Standard Percentage</label>:
+
+    <%= text_field 'educations', 'twelfth_grade' %></p>
+  <p><label for = "ug_university">UG University</label>:
+
+    <%= text_field 'educations', 'ug_university' %></p>
+  <p><label for = "ug_grade">UG CGPA</label>:
+
+    <%= text_field 'educations', 'ug_grade' %></p>
+
+  <%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', :back%>

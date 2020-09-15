@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20200911060619) do
+ActiveRecord::Schema.define(:version => 20200914182905) do
+
+  create_table "educations", :force => true do |t|
+    t.string  "tenth_school"
+    t.float   "tenth_grade"
+    t.string  "twelfth_school"
+    t.float   "twelfth_grade"
+    t.string  "ug_university"
+    t.float   "ug_grade"
+    t.integer "employee_id"
+  end
 
   create_table "employees", :force => true do |t|
     t.integer  "employee_id"
@@ -24,13 +34,14 @@ ActiveRecord::Schema.define(:version => 20200911060619) do
   end
 
   create_table "personals", :force => true do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.date   "dob"
-    t.string "gender"
-    t.string "nativity"
-    t.string "phone_number"
-    t.string "work_number"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.date    "dob"
+    t.string  "gender"
+    t.string  "nativity"
+    t.string  "phone_number"
+    t.string  "work_number"
+    t.integer "employee_id"
   end
 
   create_table "squads", :force => true do |t|

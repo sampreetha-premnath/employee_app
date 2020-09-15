@@ -1,0 +1,27 @@
+<h1> Edit Personal Details</h1>
+
+<%= form_tag action: 'update', :employee_id => @employee_id do %>
+  <%= label_tag(:first_name, "First Name:") %>
+  <%= text_field_tag(:first_name,@personal.first_name) %><br/><br/>
+
+  <%= label_tag(:last_name, "Last Name:") %>
+  <%= text_field_tag(:last_name,@personal.last_name) %><br/><br/>
+
+  <%= label_tag(:dob, "Date of Birth:") %>
+  <%= text_field_tag(:dob,@personal.dob) %><br/><br/>
+
+  <%= label_tag(:gender, "Gender:") %>
+  <%= text_field_tag(:gender,@personal.gender) %><br/><br/>
+
+  <%= label_tag(:nativity, "Nativity:") %>
+  <%= text_field_tag(:nativity,@personal.nativity) %><br/><br/>
+
+  <%= label_tag(:phone_number, "Phone Number:") %>
+  <%= text_field_tag(:phone_number,@personal.phone_number) %><br/><br/>
+
+  <%= label_tag(:work_number, "Work Number:") %>
+  <%= text_field_tag(:work_number,@personal.work_number) %><br/><br/>
+
+  <%= submit_tag "Update" %>
+
+<% end %>
