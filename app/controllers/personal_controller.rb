@@ -1,11 +1,5 @@
 class PersonalController < ApplicationController
 
-  def show
-    @personal = Personal.find(params[:id]) if params[:id]
-    @personal = Personal.where(employee_id: params[:employee_id]).first if params[:employee_id]
-    @employee = Employee.where(employee_id: params[:id])[0]
-  end
-
   def new
     @personal = Personal.new
     @employee_id = params[:employee_id] 
@@ -19,6 +13,11 @@ class PersonalController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+
+  def show
+    @personal = Personal.find(params[:id])
+    @employee = Employee.where(id: params[:employee_id])[0]
   end
 
   def edit

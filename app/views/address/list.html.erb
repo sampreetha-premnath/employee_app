@@ -1,0 +1,12 @@
+<% if @addresses.blank? %>
+  <p>There are no addresses currently added.</p>
+<% else %>
+
+  <ul id = "addresses">
+    <% @addresses.each do |c| %>
+      <li><%= link_to c.name, {:action => 'show', :id => c.id} -%></li>
+    <% end %>
+  </ul>
+
+<% end %>
+<p><%= link_to "Add new address", {:action => 'new' }%></p>

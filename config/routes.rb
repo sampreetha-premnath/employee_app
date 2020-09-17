@@ -1,14 +1,17 @@
 TestApp::Application.routes.draw do
-  #root :to => 'application#hello'
-
   get 'employee/list'
   get 'employee/new'
+  get 'employee/show'
   post 'employee/create'
   put 'employee/update'#
-  get 'employee/show'
   get 'employee/edit'#
   get 'employee/delete'#
   get 'employee/show_squads'#
+
+  get 'squad/new'
+  get 'squad/list'
+  post 'squad/create'
+  put 'squad/update'
 
   get 'personal/:employee_id/new' => 'personal#new', as: 'personal_new'
   get 'personal/:employee_id/show/:id' => 'personal#show', as: 'personal_show'
@@ -22,10 +25,10 @@ TestApp::Application.routes.draw do
   get 'edu/:employee_id/edit/:id' => 'education#edit', as: 'edu_edit'
   post 'edu/:employee_id/update/:id', to: 'education#update'
 
-  get 'squad/new'
-  get 'squad/list'
-  post 'squad/create'
-  put 'squad/update'
+  get 'address/:employee_id/list' => 'address#list', as: 'address_list'
+  get 'address/:employee_id/new' => 'address#new', as: 'address_new'
+  post 'address/create' => 'address#create', as: 'address_create'
+  get 'address/:employee_id/show/:id' => 'address#show', as: 'address_show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

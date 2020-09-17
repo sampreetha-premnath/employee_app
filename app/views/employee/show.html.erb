@@ -1,21 +1,27 @@
 <h1><%= @employee.employee_name %></h1>
 
 <p>
-  <strong>Employee ID: </strong> $<%= @employee.employee_id %><br />
+  <strong>Employee ID: </strong> #<%= @employee.employee_id %><br />
   <strong>Name :</strong> <%=  @employee.employee_name %><br />
   <strong>e-mail :</strong> <%=  @employee.employee_email %><br />
   <strong>Squad :</strong> <%=  @employee.squad.squad_name %><br />
 </p>
 
 <hr />
-<!--
-<%# <%if (@employee.personal_id).nil?%> %>
-  <%# <%= link_to 'Add PersonalDetails', personal_new_path(@employee.id)%> %>
-<%# <%else%> %>
- 
-<%# <%end%> %> -->
-<%= link_to 'Personal Details', personal_show_path(:employee_id => @employee.id, :id => @personal.id ) %>
-<%= link_to 'Education Details', edu_show_path(:employee_id => @employee.id, :id => @education.id)%>
-<%= link_to 'Address Details' %>
 
+<% if @personal.nil? %>
+  <%= link_to 'Add Personal Details', personal_new_path(@employee.id) %>
+<% else %>
+  <%= link_to 'Personal Details', personal_show_path(:employee_id => @employee.id, :id => @personal.id ) %>
+<% end %>
+<% if @education.nil? %>
+  <%= link_to 'Add Education Details', edu_new_path(@employee.id) %>
+<% else %>
+  <%= link_to 'Education Details', edu_show_path(:employee_id => @employee.id, :id => @education.id) %>
+<% end %>
+<% if @address.nil? %>
+  <%= link_to 'Add Address Details', address_new_path(@employee.id) %>
+<% else %>
+  <%= link_to 'Address Details' %>
+<% end %>
 <%= link_to 'Back', {:action => 'list'} %>

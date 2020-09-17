@@ -1,0 +1,23 @@
+<h1>Add New Address Details </h1>
+
+<%= form_tag :action => 'create', :employee_id => @employee_id do %>
+  <p><label for = "first_line">First Line</label>:
+
+    <%= text_field 'addresses', 'first_line' %></p>
+  <p><label for = "second_line">Second Line</label>:
+
+    <%= text_field 'addresses', 'second_line' %></p>
+  <p><label for = "city">City</label>:
+
+    <%= text_field 'addresses', 'city' %></p>
+  <p><label for = "pincode">Pincode</label>:
+
+    <%= text_field 'addresses', 'pincode' %></p>
+  <p><label for = "name">Address Name</label>:
+
+    <%= text_field 'addresses', 'name' %></p>
+
+  <%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', address_list_path %>

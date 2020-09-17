@@ -5,7 +5,6 @@ class EmployeeController < ApplicationController
   end
 
   def show
-    byebug
     @employee = Employee.where(employee_id: params[:id])[0]
     @personal = Personal.where(employee_id: @employee.id)[0]
     @education = Education.where(employee_id: @employee.id)[0]
@@ -25,7 +24,7 @@ class EmployeeController < ApplicationController
       render :action => 'new'
     end
   end
-
+end
 =begin
   def edit
     @employee = Employee.find(params[:id])
@@ -53,4 +52,3 @@ class EmployeeController < ApplicationController
     @squad = Squad.find(params[:id])
   end
 =end
-end
