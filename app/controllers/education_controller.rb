@@ -15,7 +15,7 @@ class EducationController < ApplicationController
     params[:educations][:employee_id] = params[:employee_id] if params[:employee_id].present?
     @education = Education.new(params[:educations])
     if @education.save
-      redirect_to :action => 'list', :id => @education.id, :employee_id => @education.employee_id
+      redirect_to :action => 'show', :id => @education.id, :employee_id => @education.employee_id
     else
       render :action => 'new'
     end

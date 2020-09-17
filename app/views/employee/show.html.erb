@@ -22,6 +22,6 @@
 <% if @address.nil? %>
   <%= link_to 'Add Address Details', address_new_path(@employee.id) %>
 <% else %>
-  <%= link_to 'Address Details' %>
+  <%= link_to 'Address Details', address_list_path(:employee_id => @employee.id, :id => @address.id) %>
 <% end %>
 <%= link_to 'Back', {:action => 'list'} %>
