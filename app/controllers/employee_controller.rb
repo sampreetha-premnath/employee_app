@@ -5,7 +5,6 @@ class EmployeeController < ApplicationController
   end
 
   def show
-    byebug
     @employee = Employee.where(id: params[:id])[0]
     @personal = Personal.where(employee_id: @employee.id)[0]
     @education = Education.where(employee_id: @employee.id)[0]

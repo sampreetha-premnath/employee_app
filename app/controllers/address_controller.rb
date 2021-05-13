@@ -15,12 +15,10 @@ class AddressController < ApplicationController
   end
 
   def list
-    byebug
     @addresses = Address.where(employee_id: params[:employee_id])
   end
 
   def show
-    byebug
     @address = Address.find(params[:id])
     @employee = Employee.where(id: params[:employee_id])[0]
   end
